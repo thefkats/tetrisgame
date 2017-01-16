@@ -17,10 +17,13 @@ public class GeneratorTests {
 	@Before
 	public void setup() {
 		Generator gen = new Generator(13);
+		String msg;
 	}
 	
 	@Test
 	public void test1() {
+		String actual;
+		String expected;
 		assertEquals("1","1","hi");
 	}
 }
