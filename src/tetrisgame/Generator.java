@@ -55,7 +55,7 @@ public class Generator {
 	 */
 	public Tetromino nextPiece() {
 		count++;
-		return new Tetromino(getChar(nextInt(rand)));
+		return new Tetromino(toChar(nextInt(rand)));
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class Generator {
 			tempCount++;
 		}
 
-		return new Tetromino(getChar(num));
+		return new Tetromino(toChar(num));
 	}
 
 	/**
@@ -113,6 +113,15 @@ public class Generator {
 	}
 
 	/**
+	 * Gets the next character.
+	 * 
+	 * @return randomly generated character from this generator
+	 */
+	public char getChar() {
+		return toChar(nextInt(rand));
+	}
+
+	/**
 	 * Converts an int to a char. Chars correspond to the different tetrominos:
 	 * i, j, l, o, s, t, and z. They are numbered alphabetically starting from 0
 	 * (j is 1, z is 6).
@@ -123,7 +132,7 @@ public class Generator {
 	 * @throws IllegalArgumentException
 	 *             pieceNum must be between 0 and 6 (inclusive)
 	 */
-	private static char getChar(int pieceNum) throws IllegalArgumentException {
+	private static char toChar(int pieceNum) throws IllegalArgumentException {
 
 		char piece;
 		switch (pieceNum) {
