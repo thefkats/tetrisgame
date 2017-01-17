@@ -32,18 +32,59 @@ public class Tetromino {
 		orientation = 0;
 	}
 
-	public boolean rotateR() {
+	public int[] rotateR() {
 		orientation++;
-		return true;
-
+		return null;
 	}
 
-	public boolean rotateL() {
+	public int[] rotateL() {
 		orientation--;
-		return true;
+		return null;
 	}
 
 	public char getPiece() {
 		return piece;
 	}
+
+	private boolean testRotation(int[] transition) {
+
+		return false;
+	}
+
+	/**
+	 * 4D boolean array :D. First index specifies piece (i, j, l, o, s, t, z),
+	 * 2nd specifies rotation, 3rd specifies row, 4th specifies column. Eg:
+	 * PIECES[1][2][0][1] = false (J piece, upside down, row 0, column 1).
+	 */
+	private static final boolean[][][][] PIECES = {
+			{ { { false, false, false, false }, { true, true, true, true }, { false, false, false, false },
+					{ false, false, false, false } },
+					{ { false, false, true, false }, { false, false, true, false }, { false, false, true, false },
+							{ false, false, true, false } },
+					{ { false, false, false, false }, { false, false, false, false }, { true, true, true, true },
+							{ false, false, false, false } },
+					{ { false, true, false, false }, { false, true, false, false }, { false, true, false, false },
+							{ false, true, false, false } } },
+			{ { { true, false, false }, { true, true, true }, { false, false, false } },
+					{ { false, true, true }, { false, true, false }, { false, true, false } },
+					{ { false, false, false }, { true, true, true }, { false, false, true } },
+					{ { false, true, false }, { false, true, false }, { true, true, false } } },
+			{ { { false, false, true }, { true, true, true }, { false, false, false } },
+					{ { false, true, false }, { false, true, false }, { false, true, true } },
+					{ { false, false, false }, { true, true, true }, { true, false, false } },
+					{ { true, true, false }, { false, true, false }, { false, true, false } } },
+			{ { { true, true }, { true, true } }, { { true, true }, { true, true } },
+					{ { true, true }, { true, true } }, { { true, true }, { true, true } } },
+			{ { { false, true, true }, { true, true, false }, { false, false, false } },
+					{ { false, true, false }, { false, true, true }, { false, false, true } },
+					{ { false, false, false }, { false, true, true }, { true, true, false } },
+					{ { true, false, false }, { true, true, false }, { false, true, false } } },
+			{ { { false, true, false }, { true, true, true }, { false, false, false } },
+					{ { false, true, false }, { false, true, true }, { false, true, false } },
+					{ { false, false, false }, { true, true, true }, { false, true, false } },
+					{ { false, true, false }, { true, true, false }, { false, true, false } } },
+			{ { { true, true, false }, { false, true, true }, { false, false, false } },
+					{ { false, false, true }, { false, true, true }, { false, true, false } },
+					{ { false, false, false }, { true, true, false }, { false, true, true } },
+					{ { false, true, false }, { true, true, false }, { true, false, false } } } };
 }
