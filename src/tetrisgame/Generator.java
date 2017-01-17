@@ -33,9 +33,7 @@ public class Generator {
 	 *            seed to make this generator with
 	 */
 	public Generator(long seed) {
-		this.seed = seed;
-		rand = new Random(seed);
-		count = 0;
+		setup(seed);
 	}
 
 	/**
@@ -43,7 +41,17 @@ public class Generator {
 	 */
 	public Generator() {
 		Random r = new Random();
-		seed = r.nextLong();
+		setup(r.nextLong());
+	}
+
+	/**
+	 * Sets up a generator.
+	 * 
+	 * @param seed
+	 *            seed to use in this new generator
+	 */
+	private void setup(long seed) {
+		this.seed = seed;
 		rand = new Random(seed);
 		count = 0;
 	}
