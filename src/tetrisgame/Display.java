@@ -12,5 +12,4 @@ public class Display extends JFrame {
 	public Display() {
 
 	}
-
 }

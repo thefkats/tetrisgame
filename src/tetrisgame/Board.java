@@ -12,6 +12,8 @@ public class Board extends JPanel {
 	 */
 	private static final long serialVersionUID = 5445690255082936398L;
 
+	private UpNext upNext;
+	
 	/**
 	 * Mode this board is in. 0 is default, 1 is 4 pre-setup 4 wide.
 	 */
@@ -41,6 +43,8 @@ public class Board extends JPanel {
 	private void setup(int mode) {
 		setPreferredSize(new Dimension(200, 400));
 		setBackground(Color.BLACK);
+		
+		upNext = new UpNext();
 
 		this.mode = mode;
 		board = new char[20][10];
@@ -73,4 +77,27 @@ public class Board extends JPanel {
 	public boolean addPiece() {
 		return false;
 	}
+}
+
+class UpNext extends JPanel{
+
+	/**
+	 * Serial Version UID
+	 */
+	private static final long serialVersionUID = -487853774346700236L;
+	
+	private Tetromino[] upNext;
+	
+	UpNext() {
+		setup();
+	}
+	
+	private void setup() {
+		setPreferredSize(new Dimension(200, 400));
+		setBackground(Color.BLACK);
+		
+		
+		upNext = new Tetromino[7];
+	}
+	
 }
