@@ -14,9 +14,9 @@ public class Game {
 	public static void run(Board b) {
 		Display d = new Display();
 		d.add(b, BorderLayout.CENTER);
-
+		
 		d.setDefaultCloseOperation(d.EXIT_ON_CLOSE);
-
+		
 		d.pack();
 		d.setLocationRelativeTo(null);
 		d.setVisible(true);
